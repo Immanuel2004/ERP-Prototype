@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Role Based Subject Selection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Role Based Website</h1>
+
+<div class="role-select">
+  <button onclick="showTeacher()">Teacher</button>
+  <button onclick="showStudent()">Student</button>
+</div>
+
+<!-- Teacher Section -->
+<div id="teacher" class="card hidden">
+  <h2>Teacher Panel</h2>
+  <input type="text" id="subjectName" placeholder="Subject Name">
+  <input type="number" id="seats" placeholder="Number of Seats">
+  <button onclick="addSubject()">Add Subject</button>
+
+  <h3>All Subjects</h3>
+  <ul id="teacherList"></ul>
+</div>
+
+<!-- Student Section -->
+<div id="student" class="card hidden">
+  <h2>Student Panel</h2>
+  <ul id="studentList"></ul>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
