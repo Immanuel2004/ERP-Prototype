@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: erp_postgres
+    environment:
+      POSTGRES_USER: ${DB_USER:-joshua}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+      POSTGRES_DB: ${DB_NAME:-erp_prototype}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - erp-network
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: erp_backend
+    ports:
+      - "5001:5001"
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: ${DB_NAME:-erp_prototype}
+      DB_USER: ${DB_USER:-joshua}
+      DB_PASSWORD: ${DB_PASSWORD:-postgres}
+      NODE_ENV: ${NODE_ENV:-production}
+      PORT: 5001
+      CLIENT_URL: http://localhost:3000
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_EXPIRE: ${JWT_EXPIRE:-7d}
+    depends_on:
+      - db
+    networks:
+      - erp-network
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: erp_frontend
+    ports:
+      - "3000:3000"
+    environment:
+      REACT_APP_API_URL: http://localhost:5001/api
+    depends_on:
+      - backend
+    networks:
+      - erp-network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+
+networks:
+  erp-network:
+    driver: bridge

@@ -1,0 +1,39 @@
+# Ignore node modules and dependencies
+node_modules
+npm-debug.log
+.npm
+
+# Ignore environment files (except .env.example)
+.env
+.env.local
+.env.*.local
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore build outputs
+build/
+dist/
+*.jar
+*.tar
+*.tar.gz
+
+# Ignore logs
+logs
+*.log
+
+# Ignore IDE files
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# Ignore test coverage
+coverage
+.nyc_output
+
+# Ignore temporary files
+tmp/
+temp/
