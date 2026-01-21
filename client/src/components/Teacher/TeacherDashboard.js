@@ -204,42 +204,36 @@ const TeacherDashboard = () => {
             className={activeTab === 'dashboard' ? 'tab active' : 'tab'}
             onClick={() => setActiveTab('dashboard')}
           >
-            <span className="tab-icon">📊</span>
             Dashboard
           </button>
           <button
             className={activeTab === 'semesters' ? 'tab active' : 'tab'}
             onClick={() => setActiveTab('semesters')}
           >
-            <span className="tab-icon">📅</span>
             Semesters
           </button>
           <button
             className={activeTab === 'subjects' ? 'tab active' : 'tab'}
             onClick={() => setActiveTab('subjects')}
           >
-            <span className="tab-icon">📚</span>
             Subjects
           </button>
           <button
             className={activeTab === 'enrollments' ? 'tab active' : 'tab'}
             onClick={() => setActiveTab('enrollments')}
           >
-            <span className="tab-icon">👥</span>
             Enrollments
           </button>
           <button
             className={activeTab === 'create-semester' ? 'tab active' : 'tab'}
             onClick={() => setActiveTab('create-semester')}
           >
-            <span className="tab-icon">➕</span>
             New Semester
           </button>
           <button
             className={activeTab === 'create-subject' ? 'tab active' : 'tab'}
             onClick={() => setActiveTab('create-subject')}
           >
-            <span className="tab-icon">➕</span>
             New Subject
           </button>
         </div>
@@ -255,7 +249,6 @@ const TeacherDashboard = () => {
               
               <div className="stats-grid-large">
                 <div className="stat-card-large">
-                  <div className="stat-icon">📚</div>
                   <div className="stat-details">
                     <h3>Total Subjects</h3>
                     <p className="stat-number-large">{statistics.total_subjects || 0}</p>
@@ -263,7 +256,6 @@ const TeacherDashboard = () => {
                   </div>
                 </div>
                 <div className="stat-card-large">
-                  <div className="stat-icon">👥</div>
                   <div className="stat-details">
                     <h3>Total Enrollments</h3>
                     <p className="stat-number-large">{statistics.total_enrollments || 0}</p>
@@ -271,7 +263,6 @@ const TeacherDashboard = () => {
                   </div>
                 </div>
                 <div className="stat-card-large">
-                  <div className="stat-icon">🎓</div>
                   <div className="stat-details">
                     <h3>Total Students</h3>
                     <p className="stat-number-large">{statistics.total_students || 0}</p>
@@ -279,7 +270,6 @@ const TeacherDashboard = () => {
                   </div>
                 </div>
                 <div className="stat-card-large">
-                  <div className="stat-icon">📅</div>
                   <div className="stat-details">
                     <h3>Active Semesters</h3>
                     <p className="stat-number-large">{statistics.active_semesters || 0}</p>
@@ -292,15 +282,12 @@ const TeacherDashboard = () => {
                 <h3>Quick Actions</h3>
                 <div className="action-buttons">
                   <button className="action-btn" onClick={() => setActiveTab('create-semester')}>
-                    <span className="action-icon">📅</span>
                     <span>Create New Semester</span>
                   </button>
                   <button className="action-btn" onClick={() => setActiveTab('create-subject')}>
-                    <span className="action-icon">📚</span>
                     <span>Create New Subject</span>
                   </button>
                   <button className="action-btn" onClick={() => setActiveTab('enrollments')}>
-                    <span className="action-icon">👥</span>
                     <span>View Enrollments</span>
                   </button>
                 </div>
