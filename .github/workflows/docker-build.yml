@@ -18,15 +18,17 @@ env:
 
 jobs:
   build:
-    name: Build images (no push)
+    name: Build images (PR & push)
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - uses: docker/setup-buildx-action@v2
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
 
-      - name: Build Backend image
+      - name: Build Backend image (no push)
         uses: docker/build-push-action@v4
         with:
           context: .
@@ -37,7 +39,7 @@ jobs:
           tags: |
             ${{ env.DOCKERHUB_USER }}/erp-prototype-backend:${{ github.sha }}
 
-      - name: Build Frontend image
+      - name: Build Frontend image (no push)
         uses: docker/build-push-action@v4
         with:
           context: .
@@ -55,9 +57,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - uses: docker/setup-buildx-action@v2
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
 
       - name: Login to Docker Hub
         uses: docker/login-action@v2
@@ -65,7 +69,7 @@ jobs:
           username: ${{ env.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
-      - name: Build & push Backend image
+      - name: Build and push Backend image
         uses: docker/build-push-action@v4
         with:
           context: .
@@ -77,7 +81,7 @@ jobs:
             ${{ env.DOCKERHUB_USER }}/erp-prototype-backend:latest
             ${{ env.DOCKERHUB_USER }}/erp-prototype-backend:${{ github.sha }}
 
-      - name: Build & push Frontend image
+      - name: Build and push Frontend image
         uses: docker/build-push-action@v4
         with:
           context: .
