@@ -41,3 +41,4 @@ jobs:
           tags: |
             ${{ secrets.DOCKER_HUB_USERNAME }}/erp-prototype-frontend:latest
             ${{ secrets.DOCKER_HUB_USERNAME }}/erp-prototype-frontend:${{ github.sha }}
+            
