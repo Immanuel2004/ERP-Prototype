@@ -2,7 +2,7 @@
 
 A scalable, secure web-based role-based application for managing course enrollments in educational institutions.
 
-## 🌟 Features
+##  Features
 
 ### For Teachers
 - Create and manage semesters
@@ -27,7 +27,7 @@ A scalable, secure web-based role-based application for managing course enrollme
 - **Security**: JWT authentication, helmet protection, rate limiting
 - **Scalability**: Connection pooling, optimized queries
 
-## 🏗️ Tech Stack
+## 🏗 Tech Stack
 
 ### Backend
 - **Node.js** with Express
@@ -40,13 +40,13 @@ A scalable, secure web-based role-based application for managing course enrollme
 - **Axios** for API calls
 - **Context API** for state management
 
-## 📋 Prerequisites
+##  Prerequisites
 
 - Node.js (v14 or higher)
 - PostgreSQL (v12 or higher)
 - npm or yarn
 
-## 🚀 Installation
+##  Installation
 
 ### 1. Clone the repository
 ```bash
@@ -119,7 +119,7 @@ The application will be available at:
 - Frontend: http://localhost:3000
 - Backend API: http://localhost:5000
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 ERP-Prototype/
@@ -157,7 +157,7 @@ ERP-Prototype/
 └── .env
 ```
 
-## 🔐 API Endpoints
+##  API Endpoints
 
 ### Authentication
 - `POST /api/auth/register` - Register new user
@@ -179,7 +179,7 @@ ERP-Prototype/
 - `GET /api/student/history` - Get enrollment history
 - `DELETE /api/student/enrollments/:id` - Drop enrollment
 
-## 🔒 Concurrency Handling
+##  Concurrency Handling
 
 The system uses several mechanisms to handle high concurrency:
 
@@ -229,7 +229,7 @@ ab -n 1000 -c 100 -p enroll.json -T application/json \
    http://localhost:5000/api/student/enroll
 ```
 
-## 📊 Database Schema
+##  Database Schema
 
 ### Users Table
 - id (UUID, Primary Key)
@@ -258,7 +258,7 @@ ab -n 1000 -c 100 -p enroll.json -T application/json \
 - Unique constraint: (student_id, subject_id) - No re-enrollment
 - Unique constraint: (student_id, semester_id) - One subject per semester
 
-## 🛡️ Security Features
+##  Security Features
 
 - JWT-based authentication
 - Password hashing with bcryptjs
@@ -278,7 +278,7 @@ The system handles:
 - Database connection issues
 - Invalid inputs
 
-## 📝 License
+##  License
 
 MIT
 
@@ -286,6 +286,6 @@ MIT
 
 Joshua Immanuel
 
-## 🆘 Support
+##  Support
 
 For issues or questions, please open an issue in the repository.

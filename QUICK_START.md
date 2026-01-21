@@ -1,23 +1,23 @@
 # ERP Prototype - Complete Docker & Vercel Deployment Guide
 
-## 📦 What Has Been Set Up
+##  What Has Been Set Up
 
-### Docker Configuration ✅
+### Docker Configuration 
 - **Backend Dockerfile** (`Dockerfile.backend`) - Node.js with Express
 - **Frontend Dockerfile** (`Dockerfile.frontend`) - React with multi-stage build
 - **Docker Compose** (`docker-compose.yml`) - Local development with PostgreSQL
 - **.dockerignore** - Optimized image builds
 
-### Documentation ✅
+### Documentation 
 - `DOCKER_GUIDE.md` - Complete Docker operations guide
 - `DEPLOYMENT.md` - Multi-option deployment strategies
 - `.env.example` - Environment variables template
 
-### CI/CD ✅
+### CI/CD 
 - GitHub Actions workflow for automated Docker builds
 - Scripts for Docker Hub integration
 
-### Images Built Successfully ✅
+### Images Built Successfully 
 ```
 erp-backend:test       - Backend API service
 erp-frontend:test      - React frontend application
@@ -25,7 +25,7 @@ erp-frontend:test      - React frontend application
 
 ---
 
-## 🚀 Quick Start (Local Development with Docker)
+##  Quick Start (Local Development with Docker)
 
 ### Start Everything
 ```bash
@@ -65,7 +65,7 @@ docker-compose down
 
 ---
 
-## 🌐 Deployment to Vercel
+##  Deployment to Vercel
 
 ### Important: Vercel Limitations
 Vercel is **frontend-only** and doesn't support traditional Docker containers. Use this strategy:
@@ -138,7 +138,7 @@ JWT_EXPIRE=7d
 
 ---
 
-## 🐳 Docker Hub Deployment
+##  Docker Hub Deployment
 
 ### Push Images to Docker Hub
 
@@ -173,9 +173,9 @@ docker-compose up -d
 
 ---
 
-## 🔧 Advanced Deployment Options
+##  Advanced Deployment Options
 
-### Option A: Railway (Full Stack) ⭐ Recommended
+### Option A: Railway (Full Stack)  Recommended
 
 **Pros:**
 - Single platform for frontend, backend, and database
@@ -226,7 +226,7 @@ kubectl apply -f kubernetes-deployment.yml
 
 ---
 
-## 📊 Monitoring & Logs
+##  Monitoring & Logs
 
 ### Local Docker
 ```bash
@@ -250,7 +250,7 @@ docker-compose logs --tail=100 -f backend
 
 ---
 
-## 🔐 Security Checklist
+##  Security Checklist
 
 - [ ] Never commit `.env` files
 - [ ] Generate strong JWT_SECRET: `openssl rand -hex 32`
@@ -263,7 +263,7 @@ docker-compose logs --tail=100 -f backend
 
 ---
 
-## 📈 Cost Breakdown
+##  Cost Breakdown
 
 | Service | Cost | Notes |
 |---------|------|-------|
@@ -275,7 +275,7 @@ docker-compose logs --tail=100 -f backend
 
 ---
 
-## 🆘 Troubleshooting
+##  Troubleshooting
 
 ### Docker Compose Issues
 
@@ -328,7 +328,7 @@ kill -9 <PID>
 
 ---
 
-## 📚 Additional Resources
+##  Additional Resources
 
 - [Docker Documentation](https://docs.docker.com)
 - [Docker Compose Reference](https://docs.docker.com/compose/compose-file)
@@ -339,7 +339,7 @@ kill -9 <PID>
 
 ---
 
-## ✅ What's Next?
+##  What's Next?
 
 1. **Test locally**: `docker-compose up -d`
 2. **Create accounts**: 
