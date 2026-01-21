@@ -7,6 +7,7 @@ const pool = new Pool({
   database: process.env.DB_NAME,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD || undefined,
+  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
   max: 20, // Maximum number of connections in the pool
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 2000,
