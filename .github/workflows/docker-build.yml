@@ -14,7 +14,7 @@ on:
       - 'docs/**'
 
 env:
-  DOCKERHUB_USER: immanuel2004
+  DOCKERHUB_USER: immanuel35
 
 jobs:
   build:
